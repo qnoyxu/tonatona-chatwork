@@ -1,0 +1,98 @@
+name: tonatona-chatwork
+version: "0.1.0.0"
+category: Web
+synopsis: tonatona plugin for chatwork
+description: Tonatona plugin for [chatwork](https://hackage.haskell.org/package/google-server-api).
+license: "MIT"
+author: Tomone Akashi
+copyright: 2019 Tomone Akashi
+maintainer: Tomone Akashi
+
+extra-source-files:
+  - README.md
+
+ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -Werror
+default-extensions:
+  - AutoDeriveTypeable
+  - BangPatterns
+  - BinaryLiterals
+  - ConstraintKinds
+  - DataKinds
+  - DefaultSignatures
+  - DeriveDataTypeable
+  - DeriveFoldable
+  - DeriveFunctor
+  - DeriveGeneric
+  - DeriveTraversable
+  - DoAndIfThenElse
+  - DuplicateRecordFields
+  - EmptyDataDecls
+  - ExistentialQuantification
+  - FlexibleContexts
+  - FlexibleInstances
+  - FunctionalDependencies
+  - GADTs
+  - GeneralizedNewtypeDeriving
+  - InstanceSigs
+  - KindSignatures
+  - LambdaCase
+  - MonadFailDesugaring
+  - MultiParamTypeClasses
+  - MultiWayIf
+  - NamedFieldPuns
+  - NoImplicitPrelude
+  - OverloadedStrings
+  - PartialTypeSignatures
+  - PatternGuards
+  - PolyKinds
+  - RankNTypes
+  - RecordWildCards
+  - ScopedTypeVariables
+  - StandaloneDeriving
+  - TupleSections
+  - TypeFamilies
+  - TypeSynonymInstances
+  - ViewPatterns
+
+dependencies:
+  - base >= 4.7 && < 5
+  - aeson >= 1.4
+  - bytestring >= 0.10
+  - chatwork
+  - data-default-class >= 0.1
+  - http-api-data >= 0.4
+  - req >= 1.2
+  - text >= 1.2
+  - tonalude
+  - tonaparser
+  - tonatona
+  - tonatona-logger
+
+library:
+  source-dirs:
+    - src
+  exposed-modules:
+    - Tonatona.ChatWork
+    - Tonatona.ChatWork.Client
+
+tests:
+  spec:
+    main: "Spec.hs"
+    other-modules: []
+    source-dirs:
+      - test
+    dependencies:
+      - tonatona-chatwork
+      - hspec
+      - QuickCheck
+  doctest:
+    main: "DocTest.hs"
+    other-modules: []
+    source-dirs:
+      - test
+    dependencies:
+      - tonatona-chatwork
+      - doctest
+      - Glob
+
+github: qnoyxu/tonatona-chatwork
