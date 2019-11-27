@@ -39,7 +39,7 @@ instance HasParser Token where
   parser = Token <$>
     requiredVal
       "Token for ChatWork API"
-      ( argLong "token" .|| envVar "TOKEN")
+      ( argLong "chatwork-token" .|| envVar "CHATWORK_TOKEN")
 
 instance HasParser Config where
   parser = Config
